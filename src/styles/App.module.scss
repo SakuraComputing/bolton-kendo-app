@@ -1,0 +1,48 @@
+/* src/App.module.scss */
+$primary-color: #ffffff;
+$backgound-color: #06427d;
+
+.app {
+  height: 100vh;
+  width: 100vw;
+
+  /* Apply an off-white background color */
+  background-image: url('../assets/butokoden.jpg');
+  background-size: cover;       /* Ensures the image covers the entire div */
+  background-position: center;  /* Centers the image */
+  background-repeat: no-repeat; /* Prevents tiling the image */
+
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: flex-start; /* Align items at the start vertically */
+  text-align: center;
+}
+
+.container {
+  margin: 0; /* Remove default margin */
+  padding: 50px; /* Add some padding for aesthetics */
+  background: linear-gradient(to right, #003366, #0066cc);
+  border-radius: 8px; /* Optional: rounded corners */
+  opacity: 0; /* Start invisible for animation */
+  transform: scaleX(0); /* Start with no width */
+  animation: fall 0.8s forwards; /* Apply animation */
+  height: 100%;
+  width: 100%;
+}
+
+.title {
+  color: $primary-color; /* White text color for contrast */
+  font-size: 3rem; /* Optional: adjust size as needed */
+}
+
+/* Animation keyframes */
+@keyframes fall {
+  from {
+    opacity: 0; /* Start invisible */
+    transform: scaleX(0); /* Start with no width */
+  }
+  to {
+    opacity: 0.78; /* Fade in */
+    transform: scaleX(1); /* Expand to full width */
+  }
+}
