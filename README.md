@@ -9,3 +9,7 @@ npm install
 ## Running
 
 npm run dev
+
+## Git
+
+Main branch
