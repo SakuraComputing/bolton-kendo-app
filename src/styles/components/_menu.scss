@@ -1,0 +1,46 @@
+.menuContainer {
+  width: 100%;
+}
+
+.menuToggle {
+  width: 100%;
+  padding: 10px;
+  background-color: $button-color;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  text-align: left;
+  transition: background-color 0.3s ease;
+  text-align: center;
+}
+
+.menuToggle:hover {
+  background-color: $background-color;
+}
+
+.menuItems {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.menuItems.expanded {
+  max-height: 500px; /* Set a high value to accommodate all items */
+}
+
+.menuItem {
+  display: block;
+  padding: 10px;
+  background-color: $primary-color;
+  color: #001219;
+  text-decoration: none;
+  border-top: 1px solid $background-color;
+  transition: background-color 0.3s ease;
+}
+
+.menuI§tem:hover {
+  background-color: #e9d8a6;
+}
+  

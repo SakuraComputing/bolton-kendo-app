@@ -1,7 +1,3 @@
-/* src/App.module.scss */
-$primary-color: #ffffff;
-$backgound-color: #06427d;
-
 .app {
   height: 100vh;
   width: 100vw;
@@ -18,18 +14,6 @@ $backgound-color: #06427d;
   text-align: center;
 }
 
-.container {
-  margin: 0; /* Remove default margin */
-  padding: 50px; /* Add some padding for aesthetics */
-  background: linear-gradient(to right, #003366, #0066cc);
-  border-radius: 8px; /* Optional: rounded corners */
-  opacity: 0; /* Start invisible for animation */
-  transform: scaleX(0); /* Start with no width */
-  animation: fall 0.8s forwards; /* Apply animation */
-  height: 100%;
-  width: 100%;
-}
-
 .title {
   color: $primary-color; /* White text color for contrast */
   font-size: 3rem; /* Optional: adjust size as needed */
@@ -39,10 +23,26 @@ $backgound-color: #06427d;
 @keyframes fall {
   from {
     opacity: 0; /* Start invisible */
-    transform: scaleX(0); /* Start with no width */
+    transform: translateY(-100%) scaleX(0); /* Start above the screen with no width */
   }
   to {
-    opacity: 0.78; /* Fade in */
-    transform: scaleX(1); /* Expand to full width */
+    opacity: 0.95; /* Fade in */
+    transform: translateY(10vh) scaleX(1); /* Drop to 25% viewport height */
   }
+}
+
+/* Element styles */
+.falling-element {
+  margin: 10px; /* Remove default margin */
+  padding: 50px; /* Add some padding for aesthetics */
+  background: linear-gradient(to right, #2f7ecd, #0066cc);
+  border-radius: 8px; /* Optional: rounded corners */
+
+  position: absolute;
+  top: 0; /* Start from the top */
+  // left: 50%;
+  transform: translateX(-50%); /* Center horizontally */
+  height: 60vh; /* Occupy 50% of the viewport height */
+  animation: fall 1s ease-out forwards; /* Apply animation */
+  opacity: 0; /* Start invisible */
 }

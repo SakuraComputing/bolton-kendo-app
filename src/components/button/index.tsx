@@ -1,6 +1,5 @@
 // src/components/Button.tsx
 import React from 'react';
-import styles from '../../styles/Button.module.scss'
 
 interface ButtonProps {
   label: string;           // The text to display on the button
@@ -22,7 +21,7 @@ const Button: React.FC<ButtonProps> = ({
       type={type}
       onClick={onClick}
       disabled={disabled}
-      className={`${styles.btn} ${className}`}
+      className={`btn ${className}`}
     >
       {label}
     </button>
