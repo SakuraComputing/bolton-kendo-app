@@ -1,5 +1,6 @@
 // src/components/Button.tsx
 import React from 'react';
+import '../../styles/_button.scss';
 
 interface ButtonProps {
   label: string;           // The text to display on the button

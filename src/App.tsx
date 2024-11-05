@@ -1,6 +1,6 @@
 
 import Menu from './components/Menu';
-import './styles/styles.scss'
+import './styles/_base.scss';
 
 function App() {
 

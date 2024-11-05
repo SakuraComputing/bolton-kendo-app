@@ -15,7 +15,7 @@
 }
 
 .title {
-  color: $primary-color; /* White text color for contrast */
+  color: variables.$primary-color; /* White text color for contrast */
   font-size: 3rem; /* Optional: adjust size as needed */
 }
 

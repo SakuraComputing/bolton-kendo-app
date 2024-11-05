@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Button from '../button';
+import '../../styles/_menu.scss';
 
 interface MenuItem {
   label: string;
