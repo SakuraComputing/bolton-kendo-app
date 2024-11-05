@@ -3,17 +3,17 @@
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
-  background-color: #007bff; 
+  background-color: $button-color; 
   color: white;
   cursor: pointer;
   transition: background-color 0.3s ease;
 
   &:hover {
-    background-color: #0056b3; 
+    background-color: $background-color; 
   }
 
   &:disabled {
-    background-color: #ccc; 
+    background-color: $disabled-color; 
     cursor: not-allowed;
   }
 }
