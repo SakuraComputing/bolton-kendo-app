@@ -61,7 +61,7 @@
   background-color: variables.$menu-text-color;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 768px) {
   .menuItems {
     flex-direction: column;
   }
