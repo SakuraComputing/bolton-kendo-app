@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import Button from '../button';
+import React from 'react';
+import { Link } from 'react-router-dom';
 import '../../styles/_menu.scss';
 
 interface MenuItem {
@@ -16,21 +16,21 @@ const menuItems: MenuItem[] = [
 ];
 
 const ExpandableMenu: React.FC = () => {
-  const [isExpanded, setIsExpanded] = useState(true);
-
-  const toggleMenu = () => {
-    setIsExpanded(!isExpanded);
-  };
-
   return (
-    <div className="menuContainer">
-      <Button onClick={toggleMenu} className="menuToggle" label='Menu'></Button>
-      <div className={`menuItems ${isExpanded ? 'expanded' : ''}`}>
-        {menuItems.map((item) => (
-          <a key={item.label} href={item.link} className="menuItem">
-            {item.label}
-          </a>
-        ))}
+    <div className="app">
+      <div className="falling-element">
+        <h1 className="title">Bolton Kendo Club</h1>
+        <nav>
+          <ul className="menuContainer">
+            <li className="menuItems">
+              {menuItems.map((item) => (
+                <Link key={item.label} to={item.link} className="menuItem">
+                  {item.label}
+                </Link>
+              ))}
+            </li>
+          </ul>
+        </nav>
       </div>
     </div>
   );

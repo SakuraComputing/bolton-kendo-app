@@ -1,46 +1,72 @@
+.title {
+  color: variables.$primary-color; 
+  font-size: 3rem; 
+  background-color: variables.$dark-blue-color;
+  border-radius: 5px;
+  padding: 30px 20px;
+}
+
+/* Animation keyframes */
+@keyframes fall {
+  from {
+    opacity: 0; /* Start invisible */
+    transform: translateY(-100%) scaleX(0); /* Start above the screen with no width */
+  }
+  to {
+    opacity: 0.95; /* Fade in */
+    transform: translateY(2vh) scaleX(1); /* Drop to 25% viewport height */
+  }
+}
+
+/* Element styles */
+.falling-element {
+  border-radius: 8px; 
+  position: absolute;
+  top: 0; 
+  transform: translateX(-10%); 
+  animation: fall 1s ease-out forwards; 
+  opacity: 0; 
+  width: 90%;
+}
+
 .menuContainer {
-  width: 100%;
-}
-
-.menuToggle {
-  width: 100%;
-  padding: 10px;
-  background-color: variables.$button-color;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-  border: none;
-  outline: none;
-  text-align: left;
-  transition: background-color 0.3s ease;
-  text-align: center;
-}
-
-.menuToggle:hover {
-  background-color: variables.$background-color;
+  padding-left: 0;
 }
 
 .menuItems {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.4s ease;
-}
-
-.menuItems.expanded {
-  max-height: 500px; /* Set a high value to accommodate all items */
+  max-height: 500px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .menuItem {
+  flex: 1;
   display: block;
   padding: 10px;
-  background-color: variables.$primary-color;
-  color: #001219;
+  background-color: variables.$dark-blue-color;
   text-decoration: none;
-  border-top: 1px solid variables.$background-color;
+  border-top: 1px solid variables.$primary-color;
   transition: background-color 0.3s ease;
+  width: 15rem;
+  flex-direction: row;
+  color: variables.$primary-color;
+  font-weight: 600;
 }
 
-.menuI§tem:hover {
-  background-color: #e9d8a6;
+.menuItem:hover {
+  background-color: variables.$menu-text-color;
+}
+
+@media (max-width: 800px) {
+  .menuItems {
+    flex-direction: column;
+  }
+  .menuItem {
+    width: unset;
+  }
 }
   
