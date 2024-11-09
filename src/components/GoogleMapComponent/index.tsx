@@ -1,4 +1,4 @@
-import React, { useMemo, useRef } from 'react';
+import React, { useMemo } from 'react';
 import { GoogleMap, LoadScript, MarkerF } from '@react-google-maps/api';
 import '../../styles/_googlemap.scss';
 
@@ -16,24 +16,24 @@ const GoogleMapComponent: React.FC<GoogleMapComponentProps> = ({ locationName, l
 
   const center = useMemo(() => ({ lat, lng }), [lat, lng]);
 
-  const mapRef = useRef<google.maps.Map | null>(null);
-
-  const handleMapLoad = (map: google.maps.Map) => {
-    mapRef.current = map;
-  };
+  console.log('Center coordinates:', center)
 
   return (
     <div className="google-map">
-      <LoadScript googleMapsApiKey="AIzaSyCXODqSdMI5ukTxgmx1vR0CGfBIT7z8ILM">
+      <LoadScript 
+        googleMapsApiKey="AIzaSyCXODqSdMI5ukTxgmx1vR0CGfBIT7z8ILM"
+        onLoad={() => console.log("Map loaded successfully")}
+        onError={(error) => console.log("Error loading Google Maps", error)}
+      >
         <GoogleMap
           mapContainerStyle={containerStyle}
           center={center}
           zoom={15}
-          onLoad={handleMapLoad}
+          options={{ gestureHandling: 'none' }}
         >
-          <MarkerF 
-              position={center} 
-              title={locationName}
+          <MarkerF
+            position={center}
+            title={locationName}
           />
         </GoogleMap>
       </LoadScript>
