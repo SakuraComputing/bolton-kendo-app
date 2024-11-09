@@ -2,6 +2,13 @@ import React, { useMemo } from 'react';
 import { GoogleMap, LoadScript, MarkerF } from '@react-google-maps/api';
 import '../../styles/_googlemap.scss';
 
+
+const key = {
+  google: {
+    apiKey: 'XXXXXXX',
+  }
+};
+
 interface GoogleMapComponentProps {
   locationName: string;
   lat: number;
@@ -21,7 +28,7 @@ const GoogleMapComponent: React.FC<GoogleMapComponentProps> = ({ locationName, l
   return (
     <div className="google-map">
       <LoadScript 
-        googleMapsApiKey="AIzaSyCXODqSdMI5ukTxgmx1vR0CGfBIT7z8ILM"
+        googleMapsApiKey={key.google.apiKey}
         onLoad={() => console.log("Map loaded successfully")}
         onError={(error) => console.log("Error loading Google Maps", error)}
       >
