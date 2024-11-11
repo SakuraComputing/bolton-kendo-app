@@ -1,5 +1,6 @@
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './Home';
 import Menu from './components/Menu';
 import Practice from './components/Practice';
 import './styles/_base.scss';
@@ -9,8 +10,9 @@ function App() {
   return (
     <>
       <Router>
+        <Menu />
         <Routes>
-          <Route path="/" element={<Menu />} />
+          <Route path="/" element={<Home />}/>
           <Route path="/practice-times" element={<Practice />} />
           <Route path="/about-club" element={<h1>About Club</h1>} />
           <Route path="/reading" element={<h1>Reading</h1>} />

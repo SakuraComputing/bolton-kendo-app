@@ -24,4 +24,4 @@ dist-ssr
 *.sw?
 
 # Files
-local.keys.js
+local.keys.ts

@@ -1,0 +1,15 @@
+.home {
+
+  background-image: url('../assets/bolton-kendo-main.jpg');
+  background-size: cover;       /* Ensures the image covers the entire div */
+  background-position: center;  /* Centers the image */
+  background-repeat: no-repeat; /* Prevents tiling the image */
+
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: flex-start; /* Align items at the start vertically */
+  text-align: center;
+
+    height: 100vh;
+    width: 100vw;
+}

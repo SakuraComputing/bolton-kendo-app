@@ -1,9 +1,13 @@
+.header {
+  display: flex;
+  justify-content: space-around;
+  background-color: variables.$dark-blue-color;
+}
+
 .title {
   color: variables.$primary-color; 
   font-size: 3rem; 
-  background-color: variables.$dark-blue-color;
-  border-radius: 5px;
-  padding: 30px 20px;
+  padding: 24px 20px;
 }
 
 /* Animation keyframes */
@@ -14,23 +18,27 @@
   }
   to {
     opacity: 0.95; /* Fade in */
-    transform: translateY(2vh) scaleX(1); /* Drop to 25% viewport height */
+    transform: translateY(0vh) scaleX(1); /* Drop to 25% viewport height */
   }
 }
 
-/* Element styles */
 .falling-element {
-  border-radius: 8px; 
   position: absolute;
   top: 0; 
-  transform: translateX(-10%); 
   animation: fall 1s ease-out forwards; 
   opacity: 0; 
-  width: 90%;
+  width: 100%;
 }
 
 .menuContainer {
   padding-left: 0;
+  visibility: collapse;
+
+  &.open {
+    visibility: visible;
+  }
+  animation: fall 1s ease-out forwards; 
+  opacity: 0;
 }
 
 .menuItems {
@@ -67,6 +75,26 @@
   }
   .menuItem {
     width: unset;
+  }
+}
+
+.hamburger {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  margin-top: 10px;
+  color: variables.$primary-color;
+    /* Show hamburger button only on mobile */
+  @media (min-width: 769px) {
+    display: none;
   }
 }
   

@@ -2,12 +2,8 @@ import React, { useMemo } from 'react';
 import { GoogleMap, LoadScript, MarkerF } from '@react-google-maps/api';
 import '../../styles/_googlemap.scss';
 
-
-const key = {
-  google: {
-    apiKey: 'XXXXXXX',
-  }
-};
+// Remove for prod build
+import key from '../../../local.keys';
 
 interface GoogleMapComponentProps {
   locationName: string;
