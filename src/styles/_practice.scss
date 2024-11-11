@@ -1,12 +1,14 @@
 .practice {
+    position: relative;
     background-color: variables.$dark-blue-color;
     align-items: center;
     justify-content: center;
     color: variables.$primary-color;
-    height: 100vh;
     display: flex;  
     flex-direction: column;
     justify-content: space-between;
+    top: variables.$DESKTOP_HEADER_HEIGHT  + variables.$DESKTOP_MENU_HEIGHT;
+    height: calc(100vh - variables.$DESKTOP_HEADER_HEIGHT - variables.$DESKTOP_MENU_HEIGHT);
 }
 
 .title {
@@ -32,7 +34,11 @@
     padding: 0.5rem 10px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: variables.$MOBILE_BREAKPOINT) {
+    .practice {
+        top: variables.$MOBILE_HEADER_HEIGHT;
+        height: calc(100vh - variables.$MOBILE_HEADER_HEIGHT);
+    }
     .title {
         font-size: 1.5rem; 
         height: 5rem;

@@ -5,9 +5,7 @@ import '../../styles/_practice.scss';
 const App: React.FC = () => {
   return (
     <div className="practice">
-      <h1 className="title">Practice Location</h1>
-
-      <GoogleMapComponent address="Little Lever School" lat={53.56206594631713} lng={-2.383435938632741} />
+      <GoogleMapComponent locationName="Little Lever School" lat={53.56206594631713} lng={-2.383435938632741} />
 
       <div className="practice-container">
         <div>Dojo Leader: Mark Needham</div>

@@ -45,16 +45,12 @@
 }
 
 .menuContainer {
+  position: fixed;
   padding-left: 0;
-
-  &.open {
-    visibility: visible;
-    animation: fall 1s ease-out forwards; 
-  }
-
-  &.close {
-    animation: rise 1s ease-out forwards; 
-  }
+  z-index: 999;
+  width: 100%;
+  top: variables.$DESKTOP_HEADER_HEIGHT;
+  visibility: visible;
 }
 
 .menuItems {
@@ -76,6 +72,7 @@
   transition: background-color 0.3s ease;
   width: 15rem;
   flex-direction: row;
+  text-align: center;
   color: variables.$primary-color;
   font-weight: 600;
 }
@@ -84,12 +81,24 @@
   background-color: variables.$menu-text-color;
 }
 
-@media (max-width: 768px) {
+@media (max-width: variables.$MOBILE_BREAKPOINT) {
   .menuItems {
     flex-direction: column;
   }
   .menuItem {
     width: unset;
+    text-align: left;
+  }
+  .menuContainer {
+    top: 0;
+    &.open {
+      visibility: visible;
+      animation: fall 1s ease-out forwards; 
+    }
+  
+    &.close {
+      animation: rise 1s ease-out forwards; 
+    }  
   }
 }
 
@@ -108,7 +117,7 @@
   margin-top: 10px;
   color: variables.$primary-color;
     /* Show hamburger button only on mobile */
-  @media (min-width: 769px) {
+  @media (min-width: variables.$MOBILE_BREAKPOINT) {
     display: none;
   }
 }

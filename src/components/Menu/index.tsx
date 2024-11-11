@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { FaBars } from 'react-icons/fa';
 import '../../styles/_menu.scss';
 
@@ -20,10 +20,15 @@ const menuItems: MenuItem[] = [
 const Menu: React.FC = () => {
 
   const [isOpen, setIsOpen] = useState(true);
+  const location = useLocation();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
+
+  useEffect(() => {
+    setIsOpen(false);
+  }, [location]);
   
   return (
     <div className="app">
