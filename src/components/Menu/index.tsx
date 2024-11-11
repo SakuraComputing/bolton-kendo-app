@@ -9,6 +9,7 @@ interface MenuItem {
 }
 
 const menuItems: MenuItem[] = [
+  { label: 'Home', link: '/' },
   { label: 'Practice Times', link: '/practice-times' },
   { label: 'About Club', link: '/about-club' },
   { label: 'Reading', link: '/reading' },
@@ -26,25 +27,23 @@ const Menu: React.FC = () => {
   
   return (
     <div className="app">
-      <div className="falling-element">
-        <div className='header'>
-          <button className={`hamburger ${isOpen ? 'open' : ''}`} onClick={toggleMenu}>
-            <FaBars size={30} color={`variables.$primary-color`} />
-          </button>
-          <h1 className="title">Bolton Kendo Club</h1>
-        </div>
-        <nav>
-          <ul className={`menuContainer ${isOpen ? 'open' : ''}`}>
-            <li className="menuItems">
-              {menuItems.map((item) => (
-                <Link key={item.label} to={item.link} className="menuItem">
-                  {item.label}
-                </Link>
-              ))}
-            </li>
-          </ul>
-        </nav>
+      <div className='header'>
+        <button className={`hamburger ${isOpen ? 'open' : ''}`} onClick={toggleMenu}>
+          <FaBars size={30} color={`variables.$primary-color`} />
+        </button>
+        <h1 className="title">Bolton Kendo Club</h1>
       </div>
+      <nav>
+        <ul className={`menuContainer ${isOpen ? 'open' : ''}`}>
+          <li className="menuItems">
+            {menuItems.map((item) => (
+              <Link key={item.label} to={item.link} className="menuItem">
+                {item.label}
+              </Link>
+            ))}
+          </li>
+        </ul>
+      </nav>
     </div>
   );
 };
