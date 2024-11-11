@@ -28,13 +28,13 @@ const Menu: React.FC = () => {
   return (
     <div className="app">
       <div className='header'>
-        <button className={`hamburger ${isOpen ? 'open' : ''}`} onClick={toggleMenu}>
+        <button className="hamburger" onClick={toggleMenu}>
           <FaBars size={30} color={`variables.$primary-color`} />
         </button>
         <h1 className="title">Bolton Kendo Club</h1>
       </div>
       <nav>
-        <ul className={`menuContainer ${isOpen ? 'open' : ''}`}>
+        <ul className={`menuContainer ${isOpen ? 'open' : 'close'}`}>
           <li className="menuItems">
             {menuItems.map((item) => (
               <Link key={item.label} to={item.link} className="menuItem">

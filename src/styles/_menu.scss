@@ -25,6 +25,17 @@
   }
 }
 
+@keyframes rise {
+  from {
+    opacity: 0.99; /* Start visible */
+    transform: translateY(calc(0vh + 80px)); /* Start at the final position */
+  }
+  to {
+    opacity: 0; /* Fade out */
+    transform: translateY(-100%); /* Move off-screen above */
+  }
+}
+
 .app {
   position: absolute;
   top: 0; 
@@ -35,13 +46,15 @@
 
 .menuContainer {
   padding-left: 0;
-  visibility: collapse;
 
   &.open {
     visibility: visible;
     animation: fall 1s ease-out forwards; 
   }
-  opacity: 0;
+
+  &.close {
+    animation: rise 1s ease-out forwards; 
+  }
 }
 
 .menuItems {
