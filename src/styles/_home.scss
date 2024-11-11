@@ -14,4 +14,9 @@
   top: variables.$MOBILE_HEADER_HEIGHT;
   height: calc(100vh - variables.$MOBILE_HEADER_HEIGHT);
   width: 100vw;
+
+  @media (max-width: variables.$MOBILE_BREAKPOINT) {
+    background-image: url('../assets/bolton-background-mobile.jpg');
+    background-size: center;       /* Ensures the image covers the entire div */
+  }
 }
