@@ -12,7 +12,7 @@ const menuItems: MenuItem[] = [
   { label: 'Home', link: '/' },
   { label: 'Practice Times', link: '/practice-times' },
   { label: 'About Club', link: '/about-club' },
-  { label: 'Reading', link: '/reading' },
+  { label: 'Reading and Links', link: '/reading' },
   { label: 'History of the Club', link: '/history' },
   { label: 'What is Kendo', link: '/what-is-kendo' },
 ];

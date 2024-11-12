@@ -1,7 +1,7 @@
-.about {
+.what-is-kendo {
     position: relative;
     background-color: variables.$primary-color;
-    align-items: center;
+    align-items: self-start;
     justify-content: center;
     color: variables.$dark-blue-color;
     display: flex;  
@@ -12,32 +12,32 @@
     margin: 0 20px;
 }
 
-.about-title {
+.what-is-kendo-title {
     color: variables.$dark-blue-color; 
     font-size: 1.2rem; 
     background-color: variables.$primary-color;
     text-align: center;
-    height: 2rem;
+    height: 3rem;
     margin-top: 20px;
 }
 
-.dojo-image {
+.footnote {
     margin-top: 1rem;
-    width: 50%;
+}
+
+.prompt {
+    align-items: start;
+    font-weight: bold;
+    margin: 0.2rem 0;
 }
 
 @media (max-width: variables.$MOBILE_BREAKPOINT) {
-    .about {
+    .what-is-kendo {
         top: variables.$MOBILE_HEADER_HEIGHT;
         height: calc(100vh - variables.$MOBILE_HEADER_HEIGHT);
     }
-    .about-title {
+    .what-is-kendo-title {
         font-size: 1.5rem; 
-        height: 3rem;
-    }
-
-    .dojo-image {
-        width: 100%;
-        margin-top: 1rem;
+        height: 5rem;
     }
 }
